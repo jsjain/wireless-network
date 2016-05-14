@@ -225,7 +225,7 @@ implementation
 						if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(TimeMote_t)) == SUCCESS) 
 						{
 							busy = TRUE;
-							printf("Successfully sent to 102\n");
+							printf("Successfully sent to %d mote\n",timesyncpacket->NodeID);
 						}
 						
 					}
@@ -238,7 +238,7 @@ implementation
 				// added check for main mote is false
 				if (((TimeMote_t*) payload)->check == TRUE && NODE_ID == (((TimeMote_t*) payload)->NodeID))
 				{
-					printf("Data received with check\nbusy is %b",busy);
+					printf("Data received with check\n");
 					//tf = sec+(3*call LocalTime.get()-time_now)/2;
 					tf = offset+(3*(call LocalTime.get()-time_now)/2);
 					
