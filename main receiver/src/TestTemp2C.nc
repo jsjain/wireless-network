@@ -4,7 +4,11 @@
 #include "printf.h"
 #include "MoteToMote.h"
 #define NODE_ID 100
+
+// We are keeping the ID for main mote to be 100 
+// and for other motes in increasing order as we go inside the mine
 // Id of each node to be hardcoded .
+
 module TestTemp2C
 {
 	
@@ -67,7 +71,6 @@ implementation
 		u_int32_t hour = min /60;
 		printf("Current Time %ld:%ld:%ld\n", hour, min%60, sec%60);
 	}	
-	
 	
 	
 	
