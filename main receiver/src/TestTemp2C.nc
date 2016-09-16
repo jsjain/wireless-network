@@ -18,6 +18,8 @@ module TestTemp2C
 		interface Boot;
 		interface Alarm<TMilli, u_int32_t>;
 		//interface Alarm<TMilli, u_int32_t> as Alarm0;
+		
+		// this timer is dedicated for printing the current time on the monitor only
 		interface Timer<TMilli> as Timer0;
 		interface Timer<TMilli> as Timer1;
 		interface Leds;
