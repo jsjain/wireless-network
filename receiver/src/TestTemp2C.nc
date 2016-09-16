@@ -117,11 +117,13 @@ implementation
 		
 		else if (len == sizeof(MoteToMoteMsg_t))
 		{
-			
-			printf("comparing %d < %d : ", NODE_ID, ((MoteToMoteMsg_t*) payload)->NodeID);
+			//just for debugging 
+			// printf("comparing %d < %d : ", NODE_ID, ((MoteToMoteMsg_t*) payload)->NodeID);
 			printf("Original Node ID : %d", ((MoteToMoteMsg_t*) payload)->ONodeID);
 			// this will print the node ID of mote tracking the miner.
-			printf(" Worker Node ID : %d\n", ((MoteToMoteMsg_t*) payload)->Data); // this will print worker's ID.
+			
+			printf(" Worker Node ID : %d\n", ((MoteToMoteMsg_t*) payload)->Data); 
+			// this will print worker's ID.
 			if(NODE_ID < ((MoteToMoteMsg_t*) payload)->NodeID) 
 			{
 				
@@ -294,12 +296,9 @@ implementation
 			u_int32_t sec = ((call LocalTime.get() - oldtime + offset)/1024 );
 			u_int32_t min = sec /60;
 			u_int32_t hour = min /60;
-			int i;
+
 			int j=printf("Current Time is  %ld:%ld:%ld\n", hour, min%60, sec%60);
-			for(i=0;i<(100-j);i++)
-			{
-				printf("\0");
-			}
+
 
 	}
 
