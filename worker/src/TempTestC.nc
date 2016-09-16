@@ -60,21 +60,21 @@ implementation
 				}
 			
 			}
-//			// Implementation to call distress signal
-//			if(busy == FALSE && sos == TRUE)
-//			{
-//				if (buttonstate == BUTTON_PRESSED)
-//				{
-//					Minerhelp_t* msg1 = call Packet.getPayload( &packet, sizeof(Minerhelp_t));
-//					msg1->Data = (uint8_t)val;
-//					strcpy(msg1->msg, "DISTRESS SIGNAL");
-//				
-//					if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(Minerhelp_t)) != SUCCESS)
-//					{
-//						call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(Minerhelp_t));
-//					}
-//				}
-//			}
+			// Implementation to call distress signal
+			if(busy == FALSE && sos == TRUE)
+			{
+				if (buttonstate == BUTTON_PRESSED)
+				{
+					Minerhelp_t* msg1 = call Packet.getPayload( &packet, sizeof(Minerhelp_t));
+					msg1->Data = (uint8_t)val;
+					strcpy(msg1->msg, "DISTRESS SIGNAL");
+				
+					if (call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(Minerhelp_t)) != SUCCESS)
+					{
+						call AMSend.send(AM_BROADCAST_ADDR, &packet, sizeof(Minerhelp_t));
+					}
+				}
+			}
 		
 		}
 
