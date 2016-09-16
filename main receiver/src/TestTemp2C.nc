@@ -156,7 +156,8 @@ implementation
 			m = s /60;
 			h = m /60;
 			//outgoingPacket -> time = (call Timer1.getNow() + offset - oldtime);
-			printf(" Worker Node ID : %d\n at Time : %ld:%ld:%ld\n Original ID : 100", ((MinerToMoteMsg_t*) payload)->Data, h, m, s%60); // this will print worker's ID.
+			printf(" Worker Node ID : %d\n at Time : %ld:%ld:%ld\n Original ID : 100", ((MinerToMoteMsg_t*) payload)->Data, h, m%60, s%60); 
+			// this will print worker's ID.
 			
 			if(((MinerToMoteMsg_t*) payload)->sos == TRUE)
 			{
